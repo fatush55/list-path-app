@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { IntlProvider } from 'react-intl';
-import "@fontsource/roboto";
+import '@fontsource/roboto';
 
 import App from 'App';
 import enLocale from 'locales/en';
