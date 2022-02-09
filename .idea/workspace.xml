@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="874eca54-757d-45e7-8b2e-3b6da0bda1d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/en.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Main/component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Main/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFound/component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFound/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/CssBaseline/base.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/CssBaseline/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/CssBaseline/layout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/init.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/typography.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/layout/UserLayout/component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/layout/UserLayout/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/shared/FormattedOrRawMessage/component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/shared/FormattedOrRawMessage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="874eca54-757d-45e7-8b2e-3b6da0bda1d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="24qhmZuXNHsDO0Ie2ejtMHSRdaG" />
