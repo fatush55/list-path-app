@@ -10,4 +10,7 @@ export default {
   ul: {
     padding: 0,
   },
+  a: {
+    textDecoration: 'none',
+  },
 };
