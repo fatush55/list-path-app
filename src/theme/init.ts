@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { createTheme, Theme } from '@mui/material';
 
 import typography from 'theme/typography';
 
@@ -7,6 +7,6 @@ const theme = createTheme({
     mode: 'dark',
   },
   typography,
-});
+}) as Theme;
 
 export default theme;
