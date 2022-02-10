@@ -5,3 +5,11 @@ export type PropsWithoutChildren = {
 export type MessageFormat = {
   id: string;
 };
+
+export type maxString = {
+  max: string;
+};
+
+export type minString = {
+  min: string;
+};

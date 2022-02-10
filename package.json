@@ -34,6 +34,7 @@
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "file-loader": "^6.2.0",
+    "formik": "^2.2.9",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
@@ -69,7 +70,8 @@
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",
-    "workbox-webpack-plugin": "^6.4.1"
+    "workbox-webpack-plugin": "^6.4.1",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "node scripts/start.js",
