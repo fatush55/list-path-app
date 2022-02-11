@@ -1,24 +1,29 @@
 import { makeAutoObservable, onBecomeObserved } from 'mobx';
 
 import { Path, LoaderInterdface } from 'types';
+import searchStore from './Search';
 
-interface PathsInterface extends LoaderInterdface {
+export interface PathsInterface extends LoaderInterdface {
+	activeId: string;
 	paths: Path[];
 	addPath: Path;
 	initPath: Path[];
 	featchPaths: () => void;
 	lenghtPath: number;
-	pathItem: (val: number) => Path;
+	pathIndex: (index: number) => Path;
+	pathId: (id: string) => Path | undefined;
+	active: string;
 }
 
 const data = [
-	{ id: '1', title: 'title', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
-	{ id: '2', title: 'title', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
+	{ id: '1', title: 'home', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
+	{ id: '2', title: 'schoole', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
 ] as Path[];
 
 class Paths implements PathsInterface {
 	paths = [] as Path[];
 	loading = false;
+	activeId = '';
 	
 	constructor() {
 		makeAutoObservable(this, {}, {
@@ -26,6 +31,10 @@ class Paths implements PathsInterface {
 		});
 		
 		onBecomeObserved(this, 'paths', this.featchPaths);
+	}
+	
+	set active(id: string) {
+		this.activeId = id;
 	}
 	
 	set initPath(result: Path[]) {
@@ -37,11 +46,24 @@ class Paths implements PathsInterface {
 	}
 	
 	get lenghtPath() {
-		return this.paths.length;
+		return this.items.length;
 	}
 	
-	pathItem(index: number) {
-		return this.paths[index];
+	get items () {
+		return this.paths
+			.filter(({ title }) =>
+				title
+				.toLocaleLowerCase()
+				.includes(searchStore.search.toLocaleLowerCase())
+			);
+	}
+	
+	pathIndex(index: number) {
+		return this.items[index];
+	}
+	
+	pathId(pathId: string) {
+		return this.paths.find(({ id }) => id === pathId);
 	}
 	
 	startLoad() {
