@@ -7,7 +7,7 @@ import {
 	ListItemButton,
 	Typography,
 } from '@mui/material';
-import { ChevronRightOutlined, Directions } from '@mui/icons-material';
+import { ChevronRightOutlined, Directions, Star } from '@mui/icons-material';
 import { ListChildComponentProps } from 'react-window';
 import { observer } from 'mobx-react-lite';
 import classnames from 'classnames';
@@ -20,7 +20,7 @@ import useContainer from './useContainer';
 
 const PathItem: FC<ListChildComponentProps> = observer((props) => {
 	const { index, style } = props;
-	const { id, length, title, shortDescription } = pathsStore.pathIndex(index);
+	const { id, length, title, shortDescription, favorite } = pathsStore.pathIndex(index);
 	const { handlerClick } = useContainer(id, pathsStore);
 	
 	return (
@@ -35,6 +35,7 @@ const PathItem: FC<ListChildComponentProps> = observer((props) => {
 							<Directions color="warning" />
 						</Avatar>
 					</ListItemAvatar>
+					{favorite &&  <Star color="warning" sx={{ mr: '8px', ml: '-8px' }} />}
 					<ListItemText
 						primary={title}
 						secondary={shortDescription}

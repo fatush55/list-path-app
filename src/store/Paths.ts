@@ -1,27 +1,33 @@
 import { makeAutoObservable, onBecomeObserved } from 'mobx';
 
-import { Path, LoaderInterdface } from 'types';
+import { PathItem, LoaderInterdface } from 'types';
+import filterSearchPath from 'utils/filterSearchPath';
+import sortFavoritePath from 'utils/sortFavoritePath';
 import searchStore from './Search';
 
 export interface PathsInterface extends LoaderInterdface {
 	activeId: string;
-	paths: Path[];
-	addPath: Path;
-	initPath: Path[];
+	paths: PathItem[];
+	addPath: PathItem;
+	initPath: PathItem[];
 	featchPaths: () => void;
 	lenghtPath: number;
-	pathIndex: (index: number) => Path;
-	pathId: (id: string) => Path | undefined;
+	pathIndex: (index: number) => PathItem;
+	pathId: (id: string) => PathItem | undefined;
 	active: string;
+	removePath: string;
+	addFavirite: string;
+	removeFavirite: string;
+	activePath: PathItem | null;
 }
 
 const data = [
-	{ id: '1', title: 'home', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
-	{ id: '2', title: 'schoole', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
-] as Path[];
+	{ id: '1', title: 'home', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10, favorite: false },
+	{ id: '2', title: 'schoole', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10, favorite: false },
+] as PathItem[];
 
 class Paths implements PathsInterface {
-	paths = [] as Path[];
+	paths = [] as PathItem[];
 	loading = false;
 	activeId = '';
 	
@@ -37,25 +43,46 @@ class Paths implements PathsInterface {
 		this.activeId = id;
 	}
 	
-	set initPath(result: Path[]) {
+	set addFavirite(idFavorite: string) {
+		const index = this.paths.findIndex(({ id }) => id === idFavorite);
+		
+		this.paths[index].favorite = true;
+	}
+	
+	set removeFavirite(idFavorite: string) {
+		const index = this.paths.findIndex(({ id }) => id === idFavorite);
+		
+		this.paths[index].favorite = false;
+	}
+	
+	set initPath(result: PathItem[]) {
 		this.paths = result;
 	}
 	
-	set addPath(path: Path) {
+	set addPath(path: PathItem) {
 		this.paths.push(path)
+	}
+	
+	set removePath(idPath: string) {
+		const index = this.paths.findIndex(({ id }) => id === idPath);
+		
+		this.paths.splice(index, 1);
 	}
 	
 	get lenghtPath() {
 		return this.items.length;
 	}
 	
+	get activePath() {
+		const index = this.paths.findIndex(({ id }) => id === this.activeId);
+		
+		return index !== -1 ? this.paths[index] : null;
+	}
+	
 	get items () {
 		return this.paths
-			.filter(({ title }) =>
-				title
-				.toLocaleLowerCase()
-				.includes(searchStore.search.toLocaleLowerCase())
-			);
+			.filter(val => filterSearchPath(val,searchStore.search))
+			.sort(sortFavoritePath);
 	}
 	
 	pathIndex(index: number) {
@@ -81,8 +108,8 @@ class Paths implements PathsInterface {
 			const result = await new Promise((resolve, reject) => {
 				setTimeout(() =>{
 					resolve(data);
-				}, 3000)
-			}) as Path[];
+				}, 1000)
+			}) as PathItem[];
 			
 			this.initPath = result;
 		} catch (e) {
