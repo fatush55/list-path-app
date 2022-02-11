@@ -36,7 +36,7 @@ export default {
           },
         },
 
-        '& .MuiContainer-main__map': {
+        '& .MuiContainer-main__map, & .MuiContainer-main__active-path': {
           width: '50%',
           height: '100%',
           paddingLeft: '20px',
@@ -49,6 +49,35 @@ export default {
             paddingLeft: 0,
           },
         },
+        
+        '& .MuiContainer-main__active-path': {
+          display: 'flex',
+          flexDirection: 'column',
+          
+          '&--scroll': {
+            overflow: 'scroll',
+          },
+          
+          '&__action': {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            width: '100%',
+          },
+          
+          '&__info': {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            
+            '&__header': {
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            },
+          }
+        }
       },
     },
     

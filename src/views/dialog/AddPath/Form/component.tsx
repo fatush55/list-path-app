@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { InputAdornment, Box, Typography } from '@mui/material';
-import LoadingButton from '@mui/lab/LoadingButton';
+import { LoadingButton } from '@mui/lab';
 import { Check, MapTwoTone } from '@mui/icons-material';
 import { observer } from 'mobx-react-lite';
 
@@ -25,6 +25,8 @@ const Form: FC<Props> = observer(({ medium }) => {
 		title: '',
 		shortDescription: '',
 		fullDescription: '',
+		favorite: false,
+		length: 50,
 	};
 	
 	return (

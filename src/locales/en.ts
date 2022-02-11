@@ -19,6 +19,10 @@ export default {
     'maim.header.btn': 'Add path',
 
     'maim.path.search.placeholder': 'search',
+    
+    'activePath.btn.delete': 'Remove',
+    'activePath.btn.add.favorite': 'Add favorite',
+    'activePath.btn.remove.favorite': 'Remove favorite',
 
     'notFount.title': '404',
     'notFount.btn': 'Go main page',

@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
 import { Box, Container, Divider, useMediaQuery, useTheme } from '@mui/material';
+import classnames from 'classnames';
 
 import UserLayout from 'views/layout/UserLayout';
 import AddPathDialog from 'views/dialog/AddPath';
 import Header from './Header';
 import Search from './Search';
 import ListPath from './ListPath';
+import ActionsPath from './ActionsPath';
+import InfoPath from './InfoPath';
 
 const Main: FC = () => {
   const theme = useTheme();
@@ -21,7 +24,14 @@ const Main: FC = () => {
             <ListPath/>
           </Box>
           <Divider orientation={matches ? 'horizontal' : 'vertical'} />
-          <Box className="MuiContainer-main__map">left</Box>
+          <Box
+            className={classnames('MuiContainer-main__active-path', {
+              'MuiContainer-main__active-path--scroll': matches
+            })}
+          >
+            <InfoPath/>
+            <ActionsPath />
+          </Box>
         </Box>
       </Container>
       <AddPathDialog />

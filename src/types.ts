@@ -23,6 +23,7 @@ export type PathItem = {
   shortDescription: string;
   fullDescription: string;
   length: number;
+  favorite: boolean;
 }
 
 export interface LoaderInterdface {

@@ -2,18 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { PathInterface } from 'store/Path';
 import { PathsInterface } from 'store/Paths';
-
-type Value = {
-	search: string;
-};
+import { PathItem } from 'types';
 
 const useContainer = (pathStore: PathInterface, pathsStore: PathsInterface) => {
 	
-	const handlerSubmit = (values: Value): void => {
+	const handlerSubmit = (values: PathItem): void => {
+		
+		console.log(values)
 		
 		pathStore.createPath({
-			id: pathsStore.paths.length + 1,
-			length: 10,
+			// @ts-ignore
+			id: String(pathsStore.paths.length + 1),
 			...values,
 		});
 	};
