@@ -6,6 +6,10 @@ export default {
   root: {
     '&.MuiContainer-main': {
       height: 'calc(100vh - 64px)',
+      
+      '&--dialog': {
+        height: 'calc(100vh - 120px)',
+      },
 
       '& .MuiContainer-main__wrapper': {
         display: 'flex',
@@ -47,5 +51,21 @@ export default {
         },
       },
     },
+    
+    '& .MuiContainer-path-dialog': {
+      height: 'auto',
+      
+      [theme.breakpoints.down('lg')]: {
+        overflow: 'scroll',
+        height: 'calc(50vh - 90px)',
+      },
+      
+      '&__lenght': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: '50px'
+      }
+    }
   },
 };

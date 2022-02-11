@@ -6,6 +6,14 @@ export default {
     
     'shared.km': '{val} Km',
     'shared.met': '{val} m',
+    'shared.lenght.km': 'Lenght: {val} Km',
+    'shared.lenght.met': 'Lenght: {val} m',
+    
+    'dialog.addPath.title': 'Add new path',
+    'dialog.addPath.form.title.lable': 'Title',
+    'dialog.addPath.form.shortDescription.lable': 'Short description',
+    'dialog.addPath.form.fullDescription.lable': 'Full description',
+    'dialog.addPath.form.subBtn': 'Add path',
 
     'maim.header.title': 'Saunter',
     'maim.header.btn': 'Add path',

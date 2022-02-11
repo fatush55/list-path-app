@@ -1,27 +1,27 @@
 import { makeAutoObservable, onBecomeObserved } from 'mobx';
 
-import { Path, LoaderInterdface } from 'types';
+import { PathItem, LoaderInterdface } from 'types';
 import searchStore from './Search';
 
 export interface PathsInterface extends LoaderInterdface {
 	activeId: string;
-	paths: Path[];
-	addPath: Path;
-	initPath: Path[];
+	paths: PathItem[];
+	addPath: PathItem;
+	initPath: PathItem[];
 	featchPaths: () => void;
 	lenghtPath: number;
-	pathIndex: (index: number) => Path;
-	pathId: (id: string) => Path | undefined;
+	pathIndex: (index: number) => PathItem;
+	pathId: (id: string) => PathItem | undefined;
 	active: string;
 }
 
 const data = [
 	{ id: '1', title: 'home', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
 	{ id: '2', title: 'schoole', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10 },
-] as Path[];
+] as PathItem[];
 
 class Paths implements PathsInterface {
-	paths = [] as Path[];
+	paths = [] as PathItem[];
 	loading = false;
 	activeId = '';
 	
@@ -37,11 +37,11 @@ class Paths implements PathsInterface {
 		this.activeId = id;
 	}
 	
-	set initPath(result: Path[]) {
+	set initPath(result: PathItem[]) {
 		this.paths = result;
 	}
 	
-	set addPath(path: Path) {
+	set addPath(path: PathItem) {
 		this.paths.push(path)
 	}
 	
@@ -82,7 +82,7 @@ class Paths implements PathsInterface {
 				setTimeout(() =>{
 					resolve(data);
 				}, 3000)
-			}) as Path[];
+			}) as PathItem[];
 			
 			this.initPath = result;
 		} catch (e) {

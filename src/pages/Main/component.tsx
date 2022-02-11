@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Box, Container, Divider, useMediaQuery, useTheme } from '@mui/material';
 
 import UserLayout from 'views/layout/UserLayout';
+import AddPathDialog from 'views/dialog/AddPath';
 import Header from './Header';
 import Search from './Search';
 import ListPath from './ListPath';
@@ -23,6 +24,7 @@ const Main: FC = () => {
           <Box className="MuiContainer-main__map">left</Box>
         </Box>
       </Container>
+      <AddPathDialog />
     </UserLayout>
   );
 }

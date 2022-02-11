@@ -17,7 +17,7 @@ export type minString = {
   min: string;
 };
 
-export type Path = {
+export type PathItem = {
   id: string;
   title: string;
   shortDescription: string;
