@@ -1,22 +1,24 @@
 import theme from 'theme/init';
 
+import { CONTAINER_WRAPPER_VERTICAL_PADDING } from 'constants/screen';
+
 export default {
   root: {
     '&.MuiContainer-main': {
       height: 'calc(100vh - 64px)',
 
-      '& .MuiContainer-main-wrapper': {
+      '& .MuiContainer-main__wrapper': {
         display: 'flex',
         flexDirection: 'row',
-        paddingTop: '24px',
-        paddingBottom: '24px',
+        paddingTop: `${CONTAINER_WRAPPER_VERTICAL_PADDING}px`,
+        paddingBottom: `${CONTAINER_WRAPPER_VERTICAL_PADDING}px`,
         height: '100%',
 
         [theme.breakpoints.down('lg')]: {
           flexDirection: 'column',
         },
 
-        '& .MuiContainer-main-path': {
+        '& .MuiContainer-main__path': {
           width: '50%',
           height: '100%',
           paddingRight: '20px',
@@ -30,7 +32,7 @@ export default {
           },
         },
 
-        '& .MuiContainer-main-map': {
+        '& .MuiContainer-main__map': {
           width: '50%',
           height: '100%',
           paddingLeft: '20px',

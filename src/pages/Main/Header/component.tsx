@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Typography, AppBar, Toolbar, Button } from '@mui/material';
-import { Add, ControlCamera } from '@mui/icons-material';
+import { AddLocation, ControlCamera } from '@mui/icons-material';
 
 import FormattedOrRawMessage from 'views/shared/FormattedOrRawMessage';
 
@@ -12,7 +12,7 @@ const Header: FC = () => (
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <FormattedOrRawMessage message={{ id: 'maim.header.title' }} />
         </Typography>
-        <Button color="primary" variant="outlined" startIcon={<Add />}>
+        <Button color="primary" variant="outlined" startIcon={<AddLocation />}>
           <FormattedOrRawMessage message={{ id: 'maim.header.btn' }} />
         </Button>
       </Toolbar>

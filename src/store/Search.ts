@@ -9,7 +9,9 @@ class Search implements SearchInterface {
   search = '';
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, {
+      autoBind: true,
+    });
   }
 
   changeSearch(text: string) {
