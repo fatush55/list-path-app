@@ -13,7 +13,7 @@ type Props = {
 const UserLayout: FC<Props> = ({ children, className, ...props }) => (
   <Paper
     {...props}
-    className={classnames('MuiLayout-user', {
+    className={classnames('MuiLayout__user', {
       [className || '']: Boolean(className),
     })}
     square

@@ -1,0 +1,4 @@
+export const APP_BAR_HIEGHT = 64;
+export const CONTAINER_WRAPPER_VERTICAL_PADDING = 24;
+export const LIST_PATH_VERTICAL_PADDING = 24;
+export const SEARCH_INPUT = 56;

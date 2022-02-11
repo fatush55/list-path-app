@@ -12,7 +12,7 @@ const useContainer = (Search: SearchInterface) => {
   const debouncedValue = useDebounce(value);
 
   const handlerAction = (search: string | null) => {
-    if (search) {
+    if (typeof search === 'string') {
       Search.changeSearch(search);
     }
   };
