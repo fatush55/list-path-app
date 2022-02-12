@@ -3,7 +3,9 @@ import { makeAutoObservable, onBecomeObserved } from 'mobx';
 import { PathItem, LoaderInterdface } from 'types';
 import filterSearchPath from 'utils/filterSearchPath';
 import sortFavoritePath from 'utils/sortFavoritePath';
-import searchStore from './Search';
+import searchStore from 'store/Search';
+import httpClient from 'lib/httpClient';
+import { pathsRoute } from 'lib/apiRouter';
 
 export interface PathsInterface extends LoaderInterdface {
 	activeId: string;
@@ -20,11 +22,6 @@ export interface PathsInterface extends LoaderInterdface {
 	removeFavirite: string;
 	activePath: PathItem | null;
 }
-
-const data = [
-	{ id: '1', title: 'home', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10, favorite: false },
-	{ id: '2', title: 'schoole', fullDescription: 'fullDescription', shortDescription: 'shortDescription', length: 10, favorite: false },
-] as PathItem[];
 
 class Paths implements PathsInterface {
 	paths = [] as PathItem[];
@@ -105,13 +102,9 @@ class Paths implements PathsInterface {
 		this.startLoad();
 		
 		try {
-			const result = await new Promise((resolve, reject) => {
-				setTimeout(() =>{
-					resolve(data);
-				}, 1000)
-			}) as PathItem[];
+			const result = await httpClient.get(pathsRoute);
 			
-			this.initPath = result;
+			this.initPath = result.data;
 		} catch (e) {
 			console.log('featchPaths', e)
 		} finally {

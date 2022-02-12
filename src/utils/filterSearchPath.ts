@@ -1,6 +1,8 @@
-import { PathItem } from "types";
+import { PathItem } from 'types';
 
-export default ({ title }: PathItem, search: string) =>
-	title
-		.toLocaleLowerCase()
-		.includes(search.toLocaleLowerCase())
+export default ({ title, fullDescription, }: PathItem, search: string) => {
+	const isFindTitle  = title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+	const isFindFullDescription = fullDescription.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+	
+	return isFindTitle || isFindFullDescription;
+}

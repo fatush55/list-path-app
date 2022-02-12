@@ -22,7 +22,6 @@ const ActionsPath: FC = observer(() => {
 				loading={pathStore.loading}
 				loadingPosition="start"
 				variant="outlined"
-				sx={{ ml: '30px'}}
 				startIcon={isFavorite
 					? <Star color="warning" />
 					: <StarOutline color="warning" />
