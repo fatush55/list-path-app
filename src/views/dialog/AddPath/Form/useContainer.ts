@@ -12,7 +12,7 @@ const useContainer = (pathStore: PathInterface, pathsStore: PathsInterface) => {
 		
 		pathStore.createPath({
 			// @ts-ignore
-			id: String(pathsStore.paths.length + 1),
+			// id: String(pathsStore.paths.length + 1),
 			...values,
 		});
 	};
