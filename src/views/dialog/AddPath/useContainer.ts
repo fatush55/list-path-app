@@ -5,20 +5,22 @@ import { PathsInterface } from 'store/Paths';
 import { PathItem } from 'types';
 
 const useContainer = (pathStore: PathInterface, pathsStore: PathsInterface) => {
-	
-	const handlerSubmit = (values: PathItem): void => {
-		
-		console.log(values)
-		
-		pathStore.createPath({
-			// @ts-ignore
-			// id: String(pathsStore.paths.length + 1),
-			...values,
-		});
+	const values = {
+		title: '',
+		shortDescription: '',
+		fullDescription: '',
+		favorite: false,
+		distance: 0,
+		points: [],
 	};
 	
+	const handlerSubmit = (values: PathItem): void => {
+		console.log(values)
+		pathStore.createPath({ ...values });
+	};
 	
 	return {
+		values,
 		handlerSubmit,
 	};
 };

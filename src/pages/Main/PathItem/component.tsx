@@ -20,7 +20,7 @@ import useContainer from './useContainer';
 
 const PathItem: FC<ListChildComponentProps> = observer((props) => {
 	const { index, style } = props;
-	const { id, length, title, shortDescription, favorite } = pathsStore.pathIndex(index);
+	const { id, distance, title, shortDescription, favorite } = pathsStore.pathIndex(index);
 	const { handlerClick } = useContainer(id, pathsStore);
 	
 	return (
@@ -43,7 +43,7 @@ const PathItem: FC<ListChildComponentProps> = observer((props) => {
 					<Box className="MuiListPath__item__path-length">
 						<Typography variant="body2">
 							<FormattedOrRawMessage
-								message={{ id: 'shared.km', values: { val: length } }}
+								message={{ id: 'shared.km', values: { val: distance } }}
 							/>
 						</Typography>
 						<ChevronRightOutlined/>

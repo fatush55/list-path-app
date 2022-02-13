@@ -5,13 +5,21 @@ import { observer } from 'mobx-react-lite';
 import { DIALOG_IDS } from 'constants/dialog';
 import dialogStore from 'store/Dialog';
 import FormattedOrRawMessage from 'views/shared/FormattedOrRawMessage';
+import schema from 'lib/yupLocalised/schemas/createPath';
+import FormikWrapper from 'views/shared/FormikWrapper';
+import pathStore from 'store/Path';
+import pathsStore from 'store/Paths';
 
 import Form from './Form';
+import MapPath from './MapPath';
+
+import useContainer from './useContainer';
 
 const AddPath = observer(() => {
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.down('lg'));
 	const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
+	const { handlerSubmit, values } = useContainer(pathStore, pathsStore);
 	
 	return (
 		<Dialog
@@ -30,17 +38,19 @@ const AddPath = observer(() => {
 				</IconButton>
 			</DialogActions>
 			<DialogContent className="MuiDialogActions__without-padding">
-				<Container className="MuiContainer-main MuiContainer-main--dialog">
-					<Box className="MuiContainer-main__wrapper">
-						<Box className="MuiContainer-main__path">
-							<Form medium={matchesMd} />
+				<FormikWrapper values={values} onSubmit={handlerSubmit} schema={schema}>
+					<Container className="MuiContainer-main MuiContainer-main--dialog">
+						<Box className="MuiContainer-main__wrapper">
+							<Box className="MuiContainer-main__path">
+								<Form medium={matchesMd} />
+							</Box>
+							<Divider orientation={matches ? 'horizontal' : 'vertical'} />
+							<Box className="MuiContainer-main__map">
+								<MapPath />
+							</Box>
 						</Box>
-						<Divider orientation={matches ? 'horizontal' : 'vertical'} />
-						<Box className="MuiContainer-main__map">
-							right
-						</Box>
-					</Box>
-				</Container>
+					</Container>
+				</FormikWrapper>
 			</DialogContent>
 		</Dialog>
 	)

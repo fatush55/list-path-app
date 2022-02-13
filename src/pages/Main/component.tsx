@@ -4,11 +4,13 @@ import classnames from 'classnames';
 
 import UserLayout from 'views/layout/UserLayout';
 import AddPathDialog from 'views/dialog/AddPath';
+
 import Header from './Header';
 import Search from './Search';
 import ListPath from './ListPath';
 import ActionsPath from './ActionsPath';
 import InfoPath from './InfoPath';
+import MapPath from './MapPath';
 
 const Main: FC = () => {
   const theme = useTheme();
@@ -30,6 +32,7 @@ const Main: FC = () => {
             })}
           >
             <InfoPath/>
+            <MapPath />
             <ActionsPath />
           </Box>
         </Box>

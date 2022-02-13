@@ -17,17 +17,23 @@ export type minString = {
   min: string;
 };
 
+export type Points = {
+  lat: number,
+  lng: number
+};
+
 export type PathItem = {
   id: string;
   title: string;
   shortDescription: string;
   fullDescription: string;
-  length: number;
+  distance: number;
   favorite: boolean;
+  points: Points[];
 }
 
 export interface LoaderInterdface {
   loading: boolean;
   startLoad: () => void;
   finishLoad: () => void;
-}
+};

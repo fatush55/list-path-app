@@ -17,7 +17,7 @@ const InfoPath: FC = observer(() => pathsStore.activeId ? (
 				<FormattedOrRawMessage
 					message={{
 						id: 'shared.km',
-						values: { val: pathsStore.activePath?.length || 0 },
+						values: { val: pathsStore.activePath?.distance || 0 },
 				}}
 				/>
 			</Typography>

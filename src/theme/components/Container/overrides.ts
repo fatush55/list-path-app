@@ -63,6 +63,7 @@ export default {
             alignItems: 'center',
             justifyContent: 'flex-end',
             width: '100%',
+            marginTop: '24px',
           },
           
           '&__info': {
@@ -91,6 +92,7 @@ export default {
       
       '&__lenght': {
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '50px'
