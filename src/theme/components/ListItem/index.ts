@@ -1,7 +1,7 @@
 import overrides from './overrides';
 
 export default {
-	MuiListItem: {
-		styleOverrides: overrides,
-	},
+  MuiListItem: {
+    styleOverrides: overrides,
+  },
 };

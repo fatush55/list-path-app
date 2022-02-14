@@ -21,7 +21,7 @@ const InputField: FC<Props> = ({ placeholder, label, name, autoSubmit, ...props 
   const formik = useFormikContext<object>();
 
   autoSubmit && useContainer({ formik, error, touched, value: field.value });
-  
+
   return (
     <TextField
       label={typeof label === 'object' ? intl.formatMessage(label) : label}

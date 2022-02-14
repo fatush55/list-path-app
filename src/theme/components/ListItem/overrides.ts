@@ -9,12 +9,12 @@ export default {
     background: grey[800],
     height: `${PATH_ITEM_HEIGHT_WITH_PADDING}px`,
     border: 'none',
-    
+
     '&.MuiListPath__item': {
       '&--active': {
         border: `1px solid ${theme.palette.primary.main}`,
         transition: hoverNormal,
-      }
-    }
+      },
+    },
   },
 };

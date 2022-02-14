@@ -1,6 +1,6 @@
 export default {
-	'.MuiMap': {
-		minHeight: '250px',
-		height: '100%'
-	},
+  '.MuiMap': {
+    minHeight: '250px',
+    height: '100%',
+  },
 };

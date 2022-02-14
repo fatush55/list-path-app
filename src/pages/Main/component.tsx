@@ -15,23 +15,23 @@ import MapPath from './MapPath';
 const Main: FC = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('lg'));
-  
-  return  (
+
+  return (
     <UserLayout>
       <Header />
       <Container className="MuiContainer-main">
         <Box className="MuiContainer-main__wrapper">
           <Box className="MuiContainer-main__path">
             <Search />
-            <ListPath/>
+            <ListPath />
           </Box>
           <Divider orientation={matches ? 'horizontal' : 'vertical'} />
           <Box
             className={classnames('MuiContainer-main__active-path', {
-              'MuiContainer-main__active-path--scroll': matches
+              'MuiContainer-main__active-path--scroll': matches,
             })}
           >
-            <InfoPath/>
+            <InfoPath />
             <MapPath />
             <ActionsPath />
           </Box>
@@ -40,6 +40,6 @@ const Main: FC = () => {
       <AddPathDialog />
     </UserLayout>
   );
-}
+};
 
 export default Main;

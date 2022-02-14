@@ -15,11 +15,11 @@ const Header: FC = observer(() => (
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <FormattedOrRawMessage message={{ id: 'maim.header.title' }} />
         </Typography>
-        <Button 
-          color="primary" 
+        <Button
+          color="primary"
           variant="outlined"
           startIcon={<AddLocation />}
-          onClick={() => dialogStore.open = DIALOG_IDS['ADD_PATH']}
+          onClick={() => (dialogStore.open = DIALOG_IDS['ADD_PATH'])}
         >
           <FormattedOrRawMessage message={{ id: 'maim.header.btn' }} />
         </Button>
