@@ -1,2 +1,2 @@
 // @ts-ignore
-export default (count: number): number[] => [...Array(count).keys()]
+export default (count: number): number[] => [...Array(count).keys()];

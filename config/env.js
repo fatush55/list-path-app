@@ -87,6 +87,7 @@ function getClientEnvironment(publicUrl) {
         // It is defined here so it is available in the webpackHotDevClient.
         FAST_REFRESH: process.env.FAST_REFRESH !== 'false',
         API_HOST: process.env.API_HOST,
+        GOOGLE_MAP_KEY: process.env.GOOGLE_MAP_KEY,
       }
     );
   // Stringify all values so we can feed into webpack DefinePlugin

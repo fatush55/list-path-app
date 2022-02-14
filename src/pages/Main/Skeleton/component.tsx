@@ -5,19 +5,15 @@ import rangeArray from 'utils/rangeArray';
 import { SKETELOT_PATH_DESKTOP, SKETELOT_PATH_MOBILE } from 'constants/path';
 
 type Props = {
-	matches: boolean;
-}
+  matches: boolean;
+};
 
 const Skeleton: FC<Props> = ({ matches }) => (
-	<>
-		{rangeArray(matches ? SKETELOT_PATH_MOBILE : SKETELOT_PATH_DESKTOP)
-			.map((val) => (
-				<MuiSkeleton
-					key={val}
-					className="MuiListPath__item__skeleton"
-				/>
-			))}
-	</>
+  <>
+    {rangeArray(matches ? SKETELOT_PATH_MOBILE : SKETELOT_PATH_DESKTOP).map((val) => (
+      <MuiSkeleton key={val} className="MuiListPath__item__skeleton" />
+    ))}
+  </>
 );
 
 export default Skeleton;

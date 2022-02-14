@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type PropsWithoutChildren = {
   children?: never;
@@ -17,14 +17,23 @@ export type minString = {
   min: string;
 };
 
+export type Points = {
+  lat: number;
+  lng: number;
+};
+
 export type PathItem = {
   id: string;
   title: string;
   shortDescription: string;
   fullDescription: string;
-  length: number;
+  distance: number;
   favorite: boolean;
-}
+};
+
+export type PathItemWithPoints = PathItem & {
+  points: Points[];
+};
 
 export interface LoaderInterdface {
   loading: boolean;

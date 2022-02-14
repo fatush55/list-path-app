@@ -7,6 +7,8 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fontsource/roboto": "^4.5.3",
+    "@googlemaps/react-wrapper": "^1.1.23",
+    "@googlemaps/typescript-guards": "^1.0.6",
     "@mui/icons-material": "^5.4.1",
     "@mui/lab": "^5.0.0-alpha.68",
     "@mui/material": "^5.4.1",
@@ -36,6 +38,7 @@
     "css-minimizer-webpack-plugin": "^3.2.0",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
+    "fast-equals": "^2.0.4",
     "file-loader": "^6.2.0",
     "formik": "^2.2.9",
     "fs-extra": "^10.0.0",
@@ -159,6 +162,8 @@
     ]
   },
   "devDependencies": {
+    "@types/google-map-react": "^2.1.4",
+    "@types/google.maps": "^3.47.4",
     "@types/react-window": "^1.8.5",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
